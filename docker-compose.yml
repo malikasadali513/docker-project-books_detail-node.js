@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    # volumes:
+    #   - .:/app
+    #   - '/app/node_modules'
+    depends_on:
+      - asad_mysql
+  asad_mysql:
+    image: mysql:latest
+    container_name: asad_mysql
+    environment:
+      - MYSQL_DATABASE=book_database
+      - MYSQL_USER=new
+      - MYSQL_PASSWORD=root
+      - MYSQL_ROOT_PASSWORD=root
