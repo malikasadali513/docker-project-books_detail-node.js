@@ -30,10 +30,15 @@
     </div>
     <div class="container">
       <% if (message) { %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          <%- message %>
-        </div>
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+        <%- message %>
+      </div>
       <% } %>
       <div class="row">
         <% rows.map(function(eachData) { %>
@@ -42,11 +47,12 @@
             <div class="card-body text-center">
               <img
                 class="img-fluid custom-img-class my-3"
-                src="/images/<%= eachData.image %>"
+                src="/images/<%= eachData.bookImage %>"
               />
-              <h5 class="card-title">Book Title : <%- eachData.title %></h5>
+
+              <h5 class="card-title">Book Title : <%- eachData.bookTitle %></h5>
               <h6 class="card-subtitle mb-2 text-muted">
-                Author Name: <%- eachData.name %>
+                Author Name: <%- eachData.authorName %>
               </h6>
               <p class="card-text">ISBN :<%- eachData.isbn %></p>
             </div>
